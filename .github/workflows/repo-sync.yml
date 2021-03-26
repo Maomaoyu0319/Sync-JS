@@ -14,9 +14,7 @@ on:
 jobs:
   repo-sync:
     env:
-
       PAT: ${{ secrets.PAT }} 
-
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
@@ -31,8 +29,7 @@ jobs:
           source_repo: "https://github.com/ZhiYi-N/Private-Script.git"
           source_branch: "master"
           destination_branch: "Zhiyi"
-          github_token: ${{ secrets.PAT }}
-
+   
        - name: sync-Feizao
         uses: repo-sync/github-sync@v2
         if: env.PAT
